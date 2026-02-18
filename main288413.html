@@ -31,38 +31,56 @@
 
     <main>
         <section class="top-articles">
-            <!-- Article 1: NGO & Gravel Controversy -->
+            <!-- Article 1: President's Wages -->
+            <div class="card" onclick="openArticle('article-president-wages')">
+                <div class="card-date">18/02/26, 6:00 PM &bull; Shanazaya Vella</div>
+                <img src="https://placehold.co/600x400/4a1a4a/e0e0e0?text=President+Says:+Pay+MPs+More+To+Fix+Voting+%F0%9F%92%B0" alt="President Solves Voter Apathy">
+                <div class="card-title">President Solves Voter Apathy: "Have We Tried Paying Politicians More?"</div>
+            </div>
+            
+            <!-- Article 2: Board of Peace -->
+            <div class="card" onclick="openArticle('article-board-split')">
+                <div class="card-date">18/02/26, 6:15 PM &bull; Dwaynzia Borg</div>
+                <img src="https://placehold.co/600x400/1a1a2e/e0e0e0?text=Robert's+$1bn+Seat+vs+Jason's+No+%F0%9F%9B%91" alt="Robert's Billion-Dollar Seat">
+                <div class="card-title">Robert's Billion-Dollar Seat: Will Malta Join Trump's VIP Club or Listen to Jason's Common Sense?</div>
+            </div>
+
+            <!-- Article 3: NGO & Gravel Controversy -->
             <div class="card" onclick="openArticle('article-ngo-gravel')">
                 <div class="card-date">17/02/26, 10:35 PM &bull; Nyzielle Zammit</div>
                 <img src="images/ngo_gravel_controversy.jpg" alt="NGO and Gravel Controversy">
                 <div class="card-title">The Standard of Charity: Why Some NGOs Get Civil Servants and Others Get Ta’ Qali Gravel</div>
             </div>
-            
-            <!-- Article 2: Carnival Chaos -->
+
+            <!-- Article 4: Carnival Chaos -->
             <div class="card" onclick="openArticle('article-carnival-wind')">
                 <div class="card-date">17/2/26, 8:40 PM &bull; Shanazaya Vella</div>
                 <img src="images/carnival_chaos_weather_woes.jpg" alt="Carnival Chaos">
                 <div class="card-title">Malta's Carnival Blown Away: The Wind, They Say, Was 'Unexpected'</div>
-            </div>
-
-            <!-- Article 3: Board of Peace -->
-            <div class="card" onclick="openArticle('article-board-of-peace')">
-                <div class="card-date">17/2/26, 2:45 PM &bull; Dwaynzia Borg</div>
-                <img src="images/2026-02-17-board-of-peace.jpg" alt="Board of Peace Satire">
-                <div class="card-title">Robert's Billion-Dollar Seat: Will Malta Join Trump's VIP Club or Listen to Jason's Common Sense?</div>
-            </div>
-
-            <!-- Article 4: Botox vs Storm -->
-            <div class="card" onclick="openArticle('article-botox-storm')">
-                <div class="card-date">17/2/26, 11:30 AM &bull; Zaynalynn Spiteri</div>
-                <img src="images/storm-malta.jpg" alt="Botox vs Storm">
-                <div class="card-title">National Priorities: Half of Malta Braces for Storm, Other Half Braces for Botox</div>
             </div>
         </section>
 
         <section class="older-articles">
             <h2>Older Posts</h2>
             <ul>
+                <li>
+                    <a href="#article-board-of-peace" class="archive-item" onclick="openArticle('article-board-of-peace')">
+                        <img src="images/2026-02-17-board-of-peace.jpg" alt="Article thumbnail" class="archive-thumbnail">
+                        <div class="archive-text-content">
+                            <span class="archive-date">17/2/26, 2:45 PM</span>
+                            Robert's Billion-Dollar Seat: Will Malta Join Trump's VIP Club? (Early Reports)
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#article-botox-storm" class="archive-item" onclick="openArticle('article-botox-storm')">
+                        <img src="images/storm-malta.jpg" alt="Article thumbnail" class="archive-thumbnail">
+                        <div class="archive-text-content">
+                            <span class="archive-date">17/2/26, 11:30 AM</span>
+                            National Priorities: Half of Malta Braces for Storm, Other Half Braces for Botox
+                        </div>
+                    </a>
+                </li>
                 <li>
                     <a href="#article-plastic-fish" class="archive-item" onclick="openArticle('article-plastic-fish')">
                         <img src="images/plastic-pollution.jpg" alt="Article thumbnail" class="archive-thumbnail">
@@ -81,20 +99,67 @@
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="#article-1" class="archive-item" onclick="openArticle('article-1')">
-                        <img src="images/empty-conference.jpg" alt="Article thumbnail" class="archive-thumbnail">
-                        <div class="archive-text-content">
-                            <span class="archive-date">16/2/26, 2:45 PM</span>
-                            PN Bravely Asks What People Want, Hopes It's Not Too Inconvenient
-                        </div>
-                    </a>
-                </li>
             </ul>
         </section>
     </main>
 
     <!-- Full Article Overlays -->
+
+    <!-- President's Wages -->
+    <div class="article-overlay" id="article-president-wages">
+        <div class="article-full">
+            <button class="close-btn" onclick="closeArticle('article-president-wages')">&times;</button>
+            <img src="https://placehold.co/900x500/4a1a4a/e0e0e0?text=President+Says:+Pay+MPs+More+To+Fix+Voting+%F0%9F%92%B0" alt="President Solves Voter Apathy">
+            <div class="article-content">
+                <h2>President Solves Voter Apathy: "Have We Tried Paying Politicians More?"</h2>
+                <div class="author-box">
+                    <span class="by">By</span> <span class="name">Shanazaya Vella</span> <span class="date">- February 18, 2026 6:00 PM</span>
+                </div>
+                <div class="share-bar">
+                    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://whatshappening.lol/main288413.html%23article-president-wages" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path></svg></a>
+                    <a class="share-btn x" href="https://x.com/intent/post?text=President+Solves+Voter+Apathy&url=https://whatshappening.lol/main288413.html%23article-president-wages" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                </div>
+                <p class="meta">Democratic Deficit &bull; 18 Feb 2026</p>
+                <p class="commentary">
+                    In a visionary leap of logic that has left political scientists baffled, President Myriam Spiteri Debono has identified the root cause of Malta’s declining voter turnout: <strong>MPs aren't getting paid enough</strong>.
+                </p>
+                <p class="commentary">
+                    Speaking on <a href="https://www.maltatoday.com.mt/news/xtra/139346/watch__president_says_low_voter_turnout_highlights_need_for_electoral_reform_" target="_blank" rel="noopener">TVM's XTRA</a>, the President suggested that proper remuneration is the key to attracting talent and, presumably, exciting the electorate. Because nothing motivates a disillusioned voter quite like knowing the person they are voting for is securing a bigger bag.
+                </p>
+                <p class="commentary">
+                    While the President also touched on "might is right" politics and international law, the takeaway for the average citizen was clear: The solution to a democratic deficit is a financial surplus... for the politicians.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Board of Peace Split -->
+    <div class="article-overlay" id="article-board-split">
+        <div class="article-full">
+            <button class="close-btn" onclick="closeArticle('article-board-split')">&times;</button>
+            <img src="https://placehold.co/900x500/1a1a2e/e0e0e0?text=Robert's+$1bn+Seat+vs+Jason's+No+%F0%9F%9B%91" alt="Robert's Billion-Dollar Seat">
+            <div class="article-content">
+                <h2>Robert's Billion-Dollar Seat: Will Malta Join Trump's VIP Club or Listen to Jason's Common Sense?</h2>
+                <div class="author-box">
+                    <span class="by">By</span> <span class="name">Dwaynzia Borg</span> <span class="date">- February 18, 2026 6:15 PM</span>
+                </div>
+                <div class="share-bar">
+                    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://whatshappening.lol/main288413.html%23article-board-split" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path></svg></a>
+                    <a class="share-btn x" href="https://x.com/intent/post?text=Robert's+Billion-Dollar+Seat&url=https://whatshappening.lol/main288413.html%23article-board-split" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                </div>
+                <p class="meta">Diplomatic Disasters &bull; 18 Feb 2026</p>
+                <p class="commentary">
+                    The Labour Party is currently playing a high-stakes game of "Good Cop, Bad Cop" with itself over Donald Trump’s **Board of Peace**. Prime Minister Robert Abela confirmed he is "mulling" an informal invite to join the body, which aims to replace the UN and comes with a [hefty $1 billion price tag](https://timesofmalta.com/article/eu-take-part-trump-board-peace-member.1124163) after a free trial.
+                </p>
+                <p class="commentary">
+                    But the plot thickens. PL President Alex Sciberras posted a [<a href="https://www.maltatoday.com.mt/news/national/139406/labour_president_sceptical_on_trumps_board_of_peace_invite" target="_blank" rel="noopener">"cryptic" warning</a>] about neutrality, while Jason Micallef—usually the firebrand—has morphed into the voice of reason, urging the government to refuse the invite and deny "oxygen" to adversaries.
+                </p>
+                <p class="commentary">
+                    We have officially entered a timeline where Jason Micallef is the one calling for diplomatic restraint.
+                </p>
+            </div>
+        </div>
+    </div>
 
     <!-- NGO & Gravel Controversy -->
     <div class="article-overlay" id="article-ngo-gravel">
@@ -160,139 +225,6 @@
                         <div class="comment-meta"><cite>Charles Micallef</cite> <span class="source-tag">ToM</span></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Board of Peace -->
-    <div class="article-overlay" id="article-board-of-peace">
-        <div class="article-full">
-            <button class="close-btn" onclick="closeArticle('article-board-of-peace')">&times;</button>
-            <img src="images/2026-02-17-board-of-peace.jpg" alt="Satirical illustration of Abela and Trump's Board of Peace">
-            <div class="article-content">
-                <h2>Robert's Billion-Dollar Seat: Will Malta Join Trump's VIP Club or Listen to Jason's Common Sense?</h2>
-                <div class="author-box">
-                    <span class="by">By</span> <span class="name">Dwaynzia Borg</span> <span class="date">- February 17, 2026 2:45 PM</span>
-                </div>
-                <div class="share-bar">
-                    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://whatshappening.lol/main288413.html%23article-board-of-peace" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path></svg></a>
-                    <a class="share-btn x" href="https://x.com/intent/post?text=Robert's+Billion-Dollar+Seat&url=https://whatshappening.lol/main288413.html%23article-board-of-peace" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
-                </div>
-                <p class="meta">Diplomatic Disasters &bull; 17 Feb 2026</p>
-                <p class="commentary">
-                    It’s the invite no one asked for. Prime Minister Robert Abela confirmed that Malta received an "informal" nudge to join Donald Trump’s **Board of Peace**. For the low, low price of $1 billion, Malta could help "replace" the United Nations.
-                </p>
-                <p class="commentary">
-                    But the real plot twist? **Jason Micallef** has joined the moderates. "An invite is not an obligation," he proclaimed.
-                </p>
-                <h3>Portals at Odds</h3>
-                <div class="portal-grid">
-                    <div class="portal-card">
-                        <span class="portal-name">MaltaToday</span>
-                        <p class="portal-take">Reports internal PL friction and Jason's surprising "No".</p>
-                        <a href="https://www.maltatoday.com.mt/news/national/139406/labour_president_sceptical_on_trumps_board_of_peace_invite" target="_blank" class="portal-link">Read Original</a>
-                    </div>
-                    <div class="portal-card">
-                        <span class="portal-name">Times of Malta</span>
-                        <p class="portal-take">Focuses on the EU's skeptical status and the $1bn price tag.</p>
-                        <a href="https://timesofmalta.com/article/eu-take-part-trump-board-peace-member.1124163" target="_blank" class="portal-link">Read Original</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Botox vs Storm -->
-    <div class="article-overlay" id="article-botox-storm">
-        <div class="article-full">
-            <button class="close-btn" onclick="closeArticle('article-botox-storm')">&times;</button>
-            <img src="images/storm-malta.jpg" alt="Satirical AI image of botox in a storm">
-            <div class="article-content">
-                <h2>National Priorities: Half of Malta Braces for Storm, Other Half Braces for Botox</h2>
-                <div class="author-box">
-                    <span class="by">By</span> <span class="name">Zaynalynn Spiteri</span> <span class="date">- February 17, 2026 11:30 AM</span>
-                </div>
-                <div class="share-bar">
-                    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://whatshappening.lol/main288413.html%23article-botox-storm" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path></svg></a>
-                    <a class="share-btn x" href="https://x.com/intent/post?text=National+Priorities:+Half+of+Malta+Braces+for+Storm,+Other+Half+Braces+for+Botox&url=https://whatshappening.lol/main288413.html%23article-botox-storm" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
-                </div>
-                <p class="meta">Parallel Universe &bull; 17 Feb 2026</p>
-                <p class="commentary">
-                    Malta currently exists in two distinct dimensions. Over in Dimension A (<a href="https://one.com.mt/l-interess-fil-medicina-u-l-kirurgija-estetika-fmalta-kiber-brata-mghaggla/" target="_blank" rel="noopener">ONE News</a>), interest in aesthetic medicine has skyrocketed. In Dimension B (<a href="https://netnews.com.mt/2026/02/17/avviz-mill-protezzjonii-civili-dwar-rih-qawwi-li-ser-jahkem-lill-gzejjer-maltin/" target="_blank" rel="noopener">NET News</a>), the sky is literally falling with dangerous winds and rising picnic costs.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Plastic Fish -->
-    <div class="article-overlay" id="article-plastic-fish">
-        <div class="article-full">
-            <button class="close-btn" onclick="closeArticle('article-plastic-fish')">&times;</button>
-            <img src="images/plastic-pollution.jpg" alt="Satirical AI image of plastic fish">
-            <div class="article-content">
-                <h2>Malta Celebrates Record Recycling, As Marine Teams Discover New Plastic Fish Species</h2>
-                <div class="author-box">
-                    <span class="by">By</span> <span class="name">Shunique Borg</span> <span class="date">- February 17, 2026 11:00 AM</span>
-                </div>
-                <div class="share-bar">
-                    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://whatshappening.lol/main288413.html%23article-plastic-fish" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path></svg></a>
-                    <a class="share-btn x" href="https://x.com/intent/post?text=Malta+Celebrates+Record+Recycling&url=https://whatshappening.lol/main288413.html%23article-plastic-fish" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
-                </div>
-                <p class="meta">Environment &bull; 17 Feb 2026</p>
-                <p class="commentary">
-                    Officials announced 283 million plastic bottles recycled (<a href="https://lovinmalta.com/malta/malta-recycles-283-million-plastic-bottles-in-record-breaking-year/" target="_blank" rel="noopener">Lovin Malta</a>). Yet cleanup teams remove 1,336 kg of debris (<a href="https://lovinmalta.com/beaches/coast-is-clear-removes-1336-kg-of-marine-debris-in-post-storm-clean-up/" target="_blank" rel="noopener">Coast Is Clear</a>).
-                </p>
-                <div class="comments-section">
-                    <h3>Comments from the Public (as imagined)</h3>
-                    <div class="comment">
-                        <blockquote>"They made €4 million from unredeemed bottles and the machines still don't work?"</blockquote>
-                        <div class="comment-meta"><cite>RF</cite> <span class="source-tag">MI</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Chief Justice Showdown -->
-    <div class="article-overlay" id="article-cj">
-        <div class="article-full">
-            <button class="close-btn" onclick="closeArticle('article-cj')">&times;</button>
-            <img src="images/law-courts.jpg" alt="Chief Justice Showdown">
-            <div class="article-content">
-                <h2>Four Portals, One Judge, Zero Agreement: The Chief Justice Showdown</h2>
-                <div class="author-box">
-                    <span class="by">By</span> <span class="name">Shanazaya Buttigieg</span> <span class="date">- February 17, 2026 6:30 AM</span>
-                </div>
-                <div class="share-bar">
-                    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://whatshappening.lol/main288413.html%23article-cj" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path></svg></a>
-                    <a class="share-btn x" href="https://x.com/intent/post?text=Four+Portals,+One+Judge,+Zero+Agreement&url=https://whatshappening.lol/main288413.html%23article-cj" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
-                </div>
-                <p class="meta">Showdown &bull; 16 Feb 2026</p>
-                <p class="commentary">
-                    Malta needed a new Chief Justice. We got political theatre instead. <a href="https://www.maltatoday.com.mt/news/national/139437/government_proposes_consuelo_scerri_herrera_for_chief_justice_irks_opposition_with_surprise_move" target="_blank" rel="noopener">MaltaToday</a> reported a "surprise move," while <a href="https://timesofmalta.com/article/pm-proposes-consuelo-scerri-herrera-chief-justice.1123230" target="_blank" rel="noopener">Times of Malta</a> casually noted other names in the running.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- PN Silent Treatment -->
-    <div class="article-overlay" id="article-1">
-        <div class="article-full">
-            <button class="close-btn" onclick="closeArticle('article-1')">&times;</button>
-            <img src="images/empty-conference.jpg" alt="Satirical AI image">
-            <div class="article-content">
-                <h2>PN Bravely Asks What People Want, Hopes It's Not Too Inconvenient</h2>
-                <div class="author-box">
-                    <span class="by">By</span> <span class="name">Dwaynzia Gauci</span> <span class="date">- February 16, 2026 2:45 PM</span>
-                </div>
-                <div class="share-bar">
-                    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://whatshappening.lol/main288413.html%23article-1" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path></svg></a>
-                    <a class="share-btn x" href="https://x.com/intent/post?text=PN+Bravely+Asks+What+People+Want&url=https://whatshappening.lol/main288413.html%23article-1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
-                </div>
-                <p class="meta">Silent Treatment &bull; 16 Feb 2026</p>
-                <p class="commentary">
-                    The PN unveiled a "National Convention" (<a href="https://timesofmalta.com/article/pn-launches-public-dialogue-shape-future-electoral-programme.1123971" target="_blank" rel="noopener">Times of Malta</a>). Meanwhile, other corners of the media were busy reporting on skincare brands.
-                </p>
             </div>
         </div>
     </div>
