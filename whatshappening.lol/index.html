@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What's Happening LOL</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0a0a1a;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+.container { max-width: 600px; padding: 40px; }
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #e94560, #f5a623);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.tagline { font-size: 1.1em; color: #888; margin-bottom: 40px; }
+.coming-soon {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid #e94560;
+  border-radius: 30px;
+  color: #e94560;
+  font-size: 1em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+.emoji { font-size: 3em; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="emoji"><img src="logo.png" alt="logo" style="width:130px;height:130px;border-radius:50%"></div>
+  <h1>whatshappening.lol</h1>
+  <p class="tagline">Something is brewing...</p>
+  <div class="coming-soon">Coming Soon</div>
+</div>
+</body>
+</html>

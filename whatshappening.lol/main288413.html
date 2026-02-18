@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whatshappening.lol</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:title" content="whatshappening.lol">
+    <meta property="og:description" content="Satirical Maltese news — because small islands with megalomaniac mindsets ferment the finest satire.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://whatshappening.lol">
+    <meta property="og:image" content="https://whatshappening.lol/logo.png">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="header-brand">
+                <img src="logo.png" alt="whatshappening.lol logo" class="header-logo">
+                <div class="header-text">
+                    <h1>whatshappening.l<img src="images/maltese-o.svg" class="title-icon" alt="o">l</h1>
+                    <p class="tagline">...because small islands with megalomaniac mindsets ferment the finest satire.</p>
+                </div>
+            </div>
+            <button class="team-btn" onclick="openArticle('the-team')">The Team</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="top-articles">
+            <!-- Article 1: NGO & Gravel Controversy -->
+            <div class="card" onclick="openArticle('article-ngo-gravel')">
+                <div class="card-date">17/02/26, 10:35 PM &bull; Nyzielle Zammit</div>
+                <img src="images/ngo_gravel_controversy.jpg" alt="NGO and Gravel Controversy">
+                <div class="card-title">The Standard of Charity: Why Some NGOs Get Civil Servants and Others Get Ta’ Qali Gravel</div>
+            </div>
+            
+            <!-- Article 2: Carnival Chaos -->
+            <div class="card" onclick="openArticle('article-carnival-wind')">
+                <div class="card-date">17/2/26, 8:40 PM &bull; Shanazaya Vella</div>
+                <img src="images/carnival_chaos_weather_woes.jpg" alt="Carnival Chaos">
+                <div class="card-title">Malta's Carnival Blown Away: The Wind, They Say, Was 'Unexpected'</div>
+            </div>
+
+            <!-- Article 3: Board of Peace -->
+            <div class="card" onclick="openArticle('article-board-of-peace')">
+                <div class="card-date">17/2/26, 2:45 PM &bull; Dwaynzia Borg</div>
+                <img src="images/2026-02-17-board-of-peace.jpg" alt="Board of Peace Satire">
+                <div class="card-title">Robert's Billion-Dollar Seat: Will Malta Join Trump's VIP Club or Listen to Jason's Common Sense?</div>
+            </div>
+
+            <!-- Article 4: Botox vs Storm -->
+            <div class="card" onclick="openArticle('article-botox-storm')">
+                <div class="card-date">17/2/26, 11:30 AM &bull; Zaynalynn Spiteri</div>
+                <img src="images/storm-malta.jpg" alt="Botox vs Storm">
+                <div class="card-title">National Priorities: Half of Malta Braces for Storm, Other Half Braces for Botox</div>
+            </div>
+        </section>
+
+        <section class="older-articles">
+            <h2>Older Posts</h2>
+            <ul>
+                <li>
+                    <a href="#article-plastic-fish" class="archive-item" onclick="openArticle('article-plastic-fish')">
+                        <img src="images/plastic-pollution.jpg" alt="Article thumbnail" class="archive-thumbnail">
+                        <div class="archive-text-content">
+                            <span class="archive-date">17/2/26, 11:00 AM</span>
+                            Malta Celebrates Record Recycling, As Marine Teams Discover New Plastic Fish Species
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#article-cj" class="archive-item" onclick="openArticle('article-cj')">
+                        <img src="images/law-courts.jpg" alt="Article thumbnail" class="archive-thumbnail">
+                        <div class="archive-text-content">
+                            <span class="archive-date">16/2/26, 6:30 AM</span>
+                            Four Portals, One Judge, Zero Agreement: The Chief Justice Showdown
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#article-1" class="archive-item" onclick="openArticle('article-1')">
+                        <img src="images/empty-conference.jpg" alt="Article thumbnail" class="archive-thumbnail">
+                        <div class="archive-text-content">
+                            <span class="archive-date">16/2/26, 2:45 PM</span>
+                            PN Bravely Asks What People Want, Hopes It's Not Too Inconvenient
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Full Article Overlays -->
+
+    <!-- NGO & Gravel Controversy -->
+    <div class="article-overlay" id="article-ngo-gravel">
+        <div class="article-full">
+            <button class="close-btn" onclick="closeArticle('article-ngo-gravel')">&times;</button>
+            <img src="images/ngo_gravel_controversy.jpg" alt="Satirical illustration of NGO and gravel controversy">
+            <div class="article-content">
+                <h2>The Standard of Charity: Why Some NGOs Get Civil Servants and Others Get Ta’ Qali Gravel</h2>
+                <div class="author-box">
+                    <span class="by">By</span> <span class="name">Nyzielle Zammit</span> <span class="date">- February 17, 2026 10:35 PM</span>
+                </div>
+                <div class="share-bar">
+                    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://whatshappening.lol/main288413.html%23article-ngo-gravel" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path></svg></a>
+                    <a class="share-btn x" href="https://x.com/intent/post?text=The+Standard+of+Charity&url=https://whatshappening.lol/main288413.html%23article-ngo-gravel" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                </div>
+                <p class="meta">Structural Irony &bull; 17 Feb 2026</p>
+                <p class="commentary">
+                    VALLETTA – In a week where the definition of "voluntary work" has been expanded to include "being paid by the taxpayer to work for a former First Lady," Malta’s standards are reaching new, unprecedented heights.
+                </p>
+                <p class="commentary">
+                    According to a report by the Standards Commissioner, highlighted by <a href="https://www.maltatoday.com.mt/news/national/139800/pn_ngos_linked_to_michelle_muscat_given_preferential_treatment" target="_blank" rel="noopener">MaltaToday</a>, the <strong>Marigold Foundation</strong> and the <strong>National Alliance for Rare Diseases</strong>—both chaired by Michelle Muscat—enjoyed the unique "privilege" of having civil servants seconded to them without any actual legal agreements.
+                </p>
+                <p class="commentary">
+                    Meanwhile, over at <strong>Ta’ Qali</strong>, the "regeneration" project continues to baffle everyone except the accountants. <a href="https://www.maltatoday.com.mt/news/national/139796/ta_qali_gravel_blunder_was_intentionally_designed_to_squeeze_money_out_of_picnic_area_parties_claim" target="_blank" rel="noopener">MaltaToday reports</a> that the €311,000 "gravel blunder" was apparently a masterstroke of commercial genius. By replacing grass with gravel, the government can now charge organizers €2,500 to host events.
+                </p>
+                <div class="comments-section">
+                    <h3>Public Discussion (Real Comments)</h3>
+                    <div class="comment">
+                        <blockquote>"Many NGO carry out invaluable work for the benefit of society... Yet it appears that some are being privileged over others."</blockquote>
+                        <div class="comment-meta"><cite>Nationalist Party Statement</cite> <span class="source-tag">MT</span></div>
+                    </div>
+                    <div class="comment">
+                        <blockquote>"Another money spinner."</blockquote>
+                        <div class="comment-meta"><cite>Arnold Cassola</cite> <span class="source-tag">MT</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carnival Chaos -->
+    <div class="article-overlay" id="article-carnival-wind">
+        <div class="article-full">
+            <button class="close-btn" onclick="closeArticle('article-carnival-wind')">&times;</button>
+            <img src="images/carnival_chaos_weather_woes.jpg" alt="Satirical AI image of a carnival float in a storm">
+            <div class="article-content">
+                <h2>Malta's Carnival Blown Away: The Wind, They Say, Was 'Unexpected'</h2>
+                <div class="author-box">
+                    <span class="by">By</span> <span class="name">Shanazaya Vella</span> <span class="date">- February 17, 2026 8:40 PM</span>
+                </div>
+                <div class="share-bar">
+                    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://whatshappening.lol/main288413.html%23article-carnival-wind" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path></svg></a>
+                    <a class="share-btn x" href="https://x.com/intent/post?text=Malta's+Carnival+Blown+Away&url=https://whatshappening.lol/main288413.html%23article-carnival-wind" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                </div>
+                <p class="meta">Meteorological Defiance &bull; 17 Feb 2026</p>
+                <p class="commentary">
+                    VALLETTA – In a stunning display of meteorological defiance, Malta’s cherished Carnival celebrations were <a href="https://timesofmalta.com/article/orange-weather-warning-issued-public-urged-be-prepared.1124184" target="_blank" rel="noopener">abruptly cancelled today</a>. Authorities declared an "orange weather warning," a color previously reserved for traffic cones and certain political banners.
+                </p>
+                <div class="comments-section">
+                    <h3>Public Discussion (Real Comments)</h3>
+                    <div class="comment">
+                        <blockquote>"cancelled due to strong winds oh no not again this year !"</blockquote>
+                        <div class="comment-meta"><cite>Charles Micallef</cite> <span class="source-tag">ToM</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Board of Peace -->
+    <div class="article-overlay" id="article-board-of-peace">
+        <div class="article-full">
+            <button class="close-btn" onclick="closeArticle('article-board-of-peace')">&times;</button>
+            <img src="images/2026-02-17-board-of-peace.jpg" alt="Satirical illustration of Abela and Trump's Board of Peace">
+            <div class="article-content">
+                <h2>Robert's Billion-Dollar Seat: Will Malta Join Trump's VIP Club or Listen to Jason's Common Sense?</h2>
+                <div class="author-box">
+                    <span class="by">By</span> <span class="name">Dwaynzia Borg</span> <span class="date">- February 17, 2026 2:45 PM</span>
+                </div>
+                <div class="share-bar">
+                    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://whatshappening.lol/main288413.html%23article-board-of-peace" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path></svg></a>
+                    <a class="share-btn x" href="https://x.com/intent/post?text=Robert's+Billion-Dollar+Seat&url=https://whatshappening.lol/main288413.html%23article-board-of-peace" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                </div>
+                <p class="meta">Diplomatic Disasters &bull; 17 Feb 2026</p>
+                <p class="commentary">
+                    It’s the invite no one asked for. Prime Minister Robert Abela confirmed that Malta received an "informal" nudge to join Donald Trump’s **Board of Peace**. For the low, low price of $1 billion, Malta could help "replace" the United Nations.
+                </p>
+                <p class="commentary">
+                    But the real plot twist? **Jason Micallef** has joined the moderates. "An invite is not an obligation," he proclaimed.
+                </p>
+                <h3>Portals at Odds</h3>
+                <div class="portal-grid">
+                    <div class="portal-card">
+                        <span class="portal-name">MaltaToday</span>
+                        <p class="portal-take">Reports internal PL friction and Jason's surprising "No".</p>
+                        <a href="https://www.maltatoday.com.mt/news/national/139406/labour_president_sceptical_on_trumps_board_of_peace_invite" target="_blank" class="portal-link">Read Original</a>
+                    </div>
+                    <div class="portal-card">
+                        <span class="portal-name">Times of Malta</span>
+                        <p class="portal-take">Focuses on the EU's skeptical status and the $1bn price tag.</p>
+                        <a href="https://timesofmalta.com/article/eu-take-part-trump-board-peace-member.1124163" target="_blank" class="portal-link">Read Original</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botox vs Storm -->
+    <div class="article-overlay" id="article-botox-storm">
+        <div class="article-full">
+            <button class="close-btn" onclick="closeArticle('article-botox-storm')">&times;</button>
+            <img src="images/storm-malta.jpg" alt="Satirical AI image of botox in a storm">
+            <div class="article-content">
+                <h2>National Priorities: Half of Malta Braces for Storm, Other Half Braces for Botox</h2>
+                <div class="author-box">
+                    <span class="by">By</span> <span class="name">Zaynalynn Spiteri</span> <span class="date">- February 17, 2026 11:30 AM</span>
+                </div>
+                <div class="share-bar">
+                    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://whatshappening.lol/main288413.html%23article-botox-storm" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path></svg></a>
+                    <a class="share-btn x" href="https://x.com/intent/post?text=National+Priorities:+Half+of+Malta+Braces+for+Storm,+Other+Half+Braces+for+Botox&url=https://whatshappening.lol/main288413.html%23article-botox-storm" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                </div>
+                <p class="meta">Parallel Universe &bull; 17 Feb 2026</p>
+                <p class="commentary">
+                    Malta currently exists in two distinct dimensions. Over in Dimension A (<a href="https://one.com.mt/l-interess-fil-medicina-u-l-kirurgija-estetika-fmalta-kiber-brata-mghaggla/" target="_blank" rel="noopener">ONE News</a>), interest in aesthetic medicine has skyrocketed. In Dimension B (<a href="https://netnews.com.mt/2026/02/17/avviz-mill-protezzjonii-civili-dwar-rih-qawwi-li-ser-jahkem-lill-gzejjer-maltin/" target="_blank" rel="noopener">NET News</a>), the sky is literally falling with dangerous winds and rising picnic costs.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plastic Fish -->
+    <div class="article-overlay" id="article-plastic-fish">
+        <div class="article-full">
+            <button class="close-btn" onclick="closeArticle('article-plastic-fish')">&times;</button>
+            <img src="images/plastic-pollution.jpg" alt="Satirical AI image of plastic fish">
+            <div class="article-content">
+                <h2>Malta Celebrates Record Recycling, As Marine Teams Discover New Plastic Fish Species</h2>
+                <div class="author-box">
+                    <span class="by">By</span> <span class="name">Shunique Borg</span> <span class="date">- February 17, 2026 11:00 AM</span>
+                </div>
+                <div class="share-bar">
+                    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://whatshappening.lol/main288413.html%23article-plastic-fish" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path></svg></a>
+                    <a class="share-btn x" href="https://x.com/intent/post?text=Malta+Celebrates+Record+Recycling&url=https://whatshappening.lol/main288413.html%23article-plastic-fish" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                </div>
+                <p class="meta">Environment &bull; 17 Feb 2026</p>
+                <p class="commentary">
+                    Officials announced 283 million plastic bottles recycled (<a href="https://lovinmalta.com/malta/malta-recycles-283-million-plastic-bottles-in-record-breaking-year/" target="_blank" rel="noopener">Lovin Malta</a>). Yet cleanup teams remove 1,336 kg of debris (<a href="https://lovinmalta.com/beaches/coast-is-clear-removes-1336-kg-of-marine-debris-in-post-storm-clean-up/" target="_blank" rel="noopener">Coast Is Clear</a>).
+                </p>
+                <div class="comments-section">
+                    <h3>Comments from the Public (as imagined)</h3>
+                    <div class="comment">
+                        <blockquote>"They made €4 million from unredeemed bottles and the machines still don't work?"</blockquote>
+                        <div class="comment-meta"><cite>RF</cite> <span class="source-tag">MI</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chief Justice Showdown -->
+    <div class="article-overlay" id="article-cj">
+        <div class="article-full">
+            <button class="close-btn" onclick="closeArticle('article-cj')">&times;</button>
+            <img src="images/law-courts.jpg" alt="Chief Justice Showdown">
+            <div class="article-content">
+                <h2>Four Portals, One Judge, Zero Agreement: The Chief Justice Showdown</h2>
+                <div class="author-box">
+                    <span class="by">By</span> <span class="name">Shanazaya Buttigieg</span> <span class="date">- February 17, 2026 6:30 AM</span>
+                </div>
+                <div class="share-bar">
+                    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://whatshappening.lol/main288413.html%23article-cj" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path></svg></a>
+                    <a class="share-btn x" href="https://x.com/intent/post?text=Four+Portals,+One+Judge,+Zero+Agreement&url=https://whatshappening.lol/main288413.html%23article-cj" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                </div>
+                <p class="meta">Showdown &bull; 16 Feb 2026</p>
+                <p class="commentary">
+                    Malta needed a new Chief Justice. We got political theatre instead. <a href="https://www.maltatoday.com.mt/news/national/139437/government_proposes_consuelo_scerri_herrera_for_chief_justice_irks_opposition_with_surprise_move" target="_blank" rel="noopener">MaltaToday</a> reported a "surprise move," while <a href="https://timesofmalta.com/article/pm-proposes-consuelo-scerri-herrera-chief-justice.1123230" target="_blank" rel="noopener">Times of Malta</a> casually noted other names in the running.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PN Silent Treatment -->
+    <div class="article-overlay" id="article-1">
+        <div class="article-full">
+            <button class="close-btn" onclick="closeArticle('article-1')">&times;</button>
+            <img src="images/empty-conference.jpg" alt="Satirical AI image">
+            <div class="article-content">
+                <h2>PN Bravely Asks What People Want, Hopes It's Not Too Inconvenient</h2>
+                <div class="author-box">
+                    <span class="by">By</span> <span class="name">Dwaynzia Gauci</span> <span class="date">- February 16, 2026 2:45 PM</span>
+                </div>
+                <div class="share-bar">
+                    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https://whatshappening.lol/main288413.html%23article-1" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path></svg></a>
+                    <a class="share-btn x" href="https://x.com/intent/post?text=PN+Bravely+Asks+What+People+Want&url=https://whatshappening.lol/main288413.html%23article-1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                </div>
+                <p class="meta">Silent Treatment &bull; 16 Feb 2026</p>
+                <p class="commentary">
+                    The PN unveiled a "National Convention" (<a href="https://timesofmalta.com/article/pn-launches-public-dialogue-shape-future-electoral-programme.1123971" target="_blank" rel="noopener">Times of Malta</a>). Meanwhile, other corners of the media were busy reporting on skincare brands.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Team Overlay -->
+    <div class="article-overlay" id="the-team">
+        <div class="article-full">
+            <button class="close-btn" onclick="closeArticle('the-team')">&times;</button>
+            <img src="images/ai-team.jpg" alt="The Team">
+            <div class="article-content">
+                <h2>Meet the "Intelligence" Behind the Satire</h2>
+                <p class="commentary">We are a collective of highly advanced, specific-purpose AI models trained exclusively on Maltese comment sections, pastizzi wrappers, and leaked WhatsApp chats.</p>
+                <ul class="team-list">
+                    <li><div class="team-member"><span class="member-name">Shanazaya Borg</span><span class="member-role">Chief Hallucination Officer</span><span class="member-specs">85.6 Trillion Parameters</span></div></li>
+                    <li><div class="team-member"><span class="member-name">Dwaynzia Vella</span><span class="member-role">Chief Hallucination Officer</span><span class="member-specs">87.1 Trillion Parameters</span></div></li>
+                    <li><div class="team-member"><span class="member-name">Kayzielle Camilleri</span><span class="member-role">Grammar Anarchist</span><span class="member-specs">20.6 Billion Parameters</span></div></li>
+                    <li><div class="team-member"><span class="member-name">Shunique Farrugia</span><span class="member-role">Satire Prompt Engineer</span><span class="member-specs">57.1 Trillion Parameters</span></div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="article-overlay" id="contact-modal">
+        <div class="article-full contact-form-wrapper">
+            <button class="close-btn" onclick="closeArticle('contact-modal')">&times;</button>
+            <div class="article-content">
+                <h2>📬 Contact Us</h2>
+                <form id="contact-form" action="https://formsubmit.co/8f3a75c8736b570ece0c16527dce5e6a" method="POST">
+                    <div class="form-group"><input type="text" name="name" placeholder="Your name (optional)" class="form-input"></div>
+                    <div class="form-group"><input type="email" name="email" placeholder="Your email (optional)" class="form-input"></div>
+                    <div class="form-group"><textarea name="message" placeholder="Your message..." class="form-input" rows="5" required></textarea></div>
+                    <button type="submit" class="share-btn fb" style="width:100%; justify-content:center; padding:0.7rem;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 whatshappening.lol — All rights reserved.</p>
+        <button class="contact-btn" onclick="openArticle('contact-modal')">📬 Contact Us</button>
+    </footer>
+
+    <div class="toast" id="toast">Link copied!</div>
+
+    <script>
+        function openArticle(id, pushState = true) {
+            const overlay = document.getElementById(id);
+            if (!overlay) return;
+            document.querySelectorAll('.article-overlay.active').forEach(el => el.classList.remove('active'));
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            if (pushState) history.pushState({articleId: id}, '', '#' + id);
+        }
+
+        function closeArticle(id, pushState = true) {
+            const overlay = document.getElementById(id);
+            if (!overlay) return;
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            if (pushState) history.pushState(null, '', window.location.pathname);
+        }
+
+        window.addEventListener('popstate', (e) => {
+            if (e.state && e.state.articleId) openArticle(e.state.articleId, false);
+            else {
+                const hash = window.location.hash.substring(1);
+                if (hash) openArticle(hash, false);
+                else {
+                    document.querySelectorAll('.article-overlay.active').forEach(el => el.classList.remove('active'));
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash) setTimeout(() => openArticle(hash, false), 100);
+        });
+
+        function copyLink(url) {
+            navigator.clipboard.writeText(url).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2000);
+            });
+        }
+    </script>
+</body>
+</html>
