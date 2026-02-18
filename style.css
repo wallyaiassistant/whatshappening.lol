@@ -523,3 +523,69 @@ main {
 }
 
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ---- Footer & Contact ---- */
+footer {
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+    margin-top: 2rem;
+}
+
+.contact-btn {
+    background: transparent;
+    border: 1px solid #555;
+    color: #aaa;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    margin-top: 0.8rem;
+}
+
+.contact-btn:hover {
+    border-color: #888;
+    color: #fff;
+}
+
+.contact-form-wrapper .article-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: #222;
+    border: 1px solid #444;
+    color: #e0e0e0;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-input::placeholder {
+    color: #888;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #5dade2;
+}
+
