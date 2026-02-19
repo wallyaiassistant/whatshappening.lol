@@ -693,28 +693,55 @@ footer {
     border-radius: 4px;
     background: linear-gradient(to right, #1a3a6b, #2a2a4a 35%, #3a2a3a 65%, #6b1a1a);
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2px;
 }
 
-.bias-marker {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
+.bias-notch {
+    width: 3px;
+    height: 14px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 1px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: background 0.2s;
+}
+
+.bias-notch:hover {
+    background: rgba(255,255,255,0.6);
+}
+
+.bias-notch.active {
     background: #fff;
-    border: 2px solid #888;
-    box-shadow: 0 0 6px rgba(255,255,255,0.3);
-    transition: left 0.4s ease, background 0.4s ease, border-color 0.4s ease;
 }
 
-.bias-marker[data-level="-3"] { left: 0%; background: #4a90d9; border-color: #4a90d9; }
-.bias-marker[data-level="-2"] { left: 16.67%; background: #6a9ad9; border-color: #6a9ad9; }
-.bias-marker[data-level="-1"] { left: 33.33%; background: #8aaad9; border-color: #8aaad9; }
-.bias-marker[data-level="0"] { left: 50%; background: #fff; border-color: #888; }
-.bias-marker[data-level="1"] { left: 66.67%; background: #d98a8a; border-color: #d98a8a; }
-.bias-marker[data-level="2"] { left: 83.33%; background: #d96a6a; border-color: #d96a6a; }
-.bias-marker[data-level="3"] { left: 100%; background: #d94a4a; border-color: #d94a4a; }
+.bias-pointer-wrapper {
+    position: absolute;
+    top: -18px;
+    transition: left 0.4s ease;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.bias-pointer {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #fff;
+    transition: border-top-color 0.4s ease;
+}
+
+.bias-pointer[data-level="-3"] { border-top-color: #4a90d9; }
+.bias-pointer[data-level="-2"] { border-top-color: #6a9ad9; }
+.bias-pointer[data-level="-1"] { border-top-color: #8aaad9; }
+.bias-pointer[data-level="0"] { border-top-color: #fff; }
+.bias-pointer[data-level="1"] { border-top-color: #d98a8a; }
+.bias-pointer[data-level="2"] { border-top-color: #d96a6a; }
+.bias-pointer[data-level="3"] { border-top-color: #d94a4a; }
 
 .bias-level-text {
     text-align: center;

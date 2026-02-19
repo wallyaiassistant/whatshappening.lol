@@ -184,7 +184,12 @@
             '3': 'Full PL spin'
         };
 
+        const LEVEL_POSITIONS = { '-3': '0%', '-2': '16.67%', '-1': '33.33%', '0': '50%', '1': '66.67%', '2': '83.33%', '3': '100%' };
+
         function buildBiasSlider(slug, level) {
+            const notches = [-3,-2,-1,0,1,2,3].map(n =>
+                `<div class="bias-notch${n === level ? ' active' : ''}" data-notch="${n}" onclick="previewBias('${slug}',${n})" title="${BIAS_LABELS[String(n)]}"></div>`
+            ).join('');
             return `
             <div class="bias-slider" data-slug="${slug}" data-level="${level}">
                 <div class="bias-label-row">
@@ -194,7 +199,10 @@
                 <div class="bias-track-wrapper">
                     <button class="bias-arrow blue" onclick="shiftBias('${slug}','blue')" title="Shift toward PN">◀</button>
                     <div class="bias-track">
-                        <div class="bias-marker" data-level="${level}"></div>
+                        <div class="bias-pointer-wrapper" style="left:${LEVEL_POSITIONS[String(level)]}">
+                            <div class="bias-pointer" data-level="${level}"></div>
+                        </div>
+                        ${notches}
                     </div>
                     <button class="bias-arrow red" onclick="shiftBias('${slug}','red')" title="Shift toward PL">▶</button>
                 </div>
@@ -208,6 +216,23 @@
                 const d = await r.json();
                 return d.bias || 0;
             } catch { return 0; }
+        }
+
+        async function previewBias(slug, level) {
+            const body = document.getElementById('article-body');
+            const articleFile = level === 0
+                ? `articles/${slug}.html`
+                : `articles/${slug}_bias_${level}.html`;
+            try {
+                let resp = await fetch(articleFile);
+                if (!resp.ok) resp = await fetch(`articles/${slug}.html`);
+                if (!resp.ok) return;
+                const html = await resp.text();
+                const sliderHtml = buildBiasSlider(slug, level);
+                const combined = html.replace('<p class="meta">', sliderHtml + '<p class="meta">');
+                body.innerHTML = combined;
+                hydrateShareBars();
+            } catch(e) {}
         }
 
         async function shiftBias(slug, direction) {
