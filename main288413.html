@@ -31,38 +31,56 @@
 
     <main>
         <section class="top-articles">
-            <!-- Article 1: President's Wages -->
+            <!-- Article 1: Bormla Panther -->
+            <div class="card" onclick="openArticle('bormla-panther')">
+                <div class="card-date">19/02/26, 10:30 AM &bull; Kayzielle Camilleri</div>
+                <img src="images/bormla_panther.jpg" alt="The Bormla Panther">
+                <div class="card-title">The Bormla Panther: Malta Mobilises After Terrifying Stray Cat Sighting</div>
+            </div>
+            
+            <!-- Article 2: Ta' Qali Concession -->
+            <div class="card" onclick="openArticle('taqali-concession')">
+                <div class="card-date">19/02/26, 10:45 AM &bull; Shunique Farrugia</div>
+                <img src="images/taqali_concession.jpg" alt="Ta Qali 50-Year Concession">
+                <div class="card-title">Occupy Land Illegally for Decades? Here's Your 50-Year Deal, Sir</div>
+            </div>
+
+            <!-- Article 3: President's Wages -->
             <div class="card" onclick="openArticle('president-wages')">
                 <div class="card-date">18/02/26, 6:00 PM &bull; Shanazaya Vella</div>
                 <img src="images/president_wages.jpg" alt="President Solves Voter Apathy">
                 <div class="card-title">President Solves Voter Apathy: "Have We Tried Paying Politicians More?"</div>
             </div>
-            
-            <!-- Article 2: Board of Peace -->
+
+            <!-- Article 4: Board of Peace -->
             <div class="card" onclick="openArticle('board-split')">
                 <div class="card-date">18/02/26, 6:15 PM &bull; Dwaynzia Borg</div>
                 <img src="images/board_of_peace_split.jpg" alt="Robert's Billion-Dollar Seat">
                 <div class="card-title">Robert's Billion-Dollar Seat: Will Malta Join Trump's VIP Club or Listen to Jason's Common Sense?</div>
-            </div>
-
-            <!-- Article 3: NGO & Gravel Controversy -->
-            <div class="card" onclick="openArticle('ngo-gravel')">
-                <div class="card-date">17/02/26, 10:35 PM &bull; Nyzielle Zammit</div>
-                <img src="images/ngo_gravel_controversy.jpg" alt="NGO and Gravel Controversy">
-                <div class="card-title">The Standard of Charity: Why Some NGOs Get Civil Servants and Others Get Ta' Qali Gravel</div>
-            </div>
-
-            <!-- Article 4: Carnival Chaos -->
-            <div class="card" onclick="openArticle('carnival-wind')">
-                <div class="card-date">17/2/26, 8:40 PM &bull; Shanazaya Vella</div>
-                <img src="images/carnival_chaos_weather_woes.jpg" alt="Carnival Chaos">
-                <div class="card-title">Malta's Carnival Blown Away: The Wind, They Say, Was 'Unexpected'</div>
             </div>
         </section>
 
         <section class="older-articles">
             <h2>Older Posts</h2>
             <ul>
+                <li>
+                    <a href="#" class="archive-item" onclick="openArticle('ngo-gravel'); return false;">
+                        <img src="images/ngo_gravel_controversy.jpg" alt="Article thumbnail" class="archive-thumbnail">
+                        <div class="archive-text-content">
+                            <span class="archive-date">17/02/26, 10:35 PM</span>
+                            The Standard of Charity: Why Some NGOs Get Civil Servants and Others Get Ta' Qali Gravel
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="archive-item" onclick="openArticle('carnival-wind'); return false;">
+                        <img src="images/carnival_chaos_weather_woes.jpg" alt="Article thumbnail" class="archive-thumbnail">
+                        <div class="archive-text-content">
+                            <span class="archive-date">17/2/26, 8:40 PM</span>
+                            Malta's Carnival Blown Away: The Wind, They Say, Was 'Unexpected'
+                        </div>
+                    </a>
+                </li>
                 <li>
                     <a href="#" class="archive-item" onclick="openArticle('board-of-peace'); return false;">
                         <img src="images/2026-02-17-board-of-peace.jpg" alt="Article thumbnail" class="archive-thumbnail">
@@ -87,24 +105,6 @@
                         <div class="archive-text-content">
                             <span class="archive-date">17/2/26, 11:00 AM</span>
                             Malta Celebrates Record Recycling, As Marine Teams Discover New Plastic Fish Species
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="archive-item" onclick="openArticle('chief-justice'); return false;">
-                        <img src="images/law-courts.jpg" alt="Article thumbnail" class="archive-thumbnail">
-                        <div class="archive-text-content">
-                            <span class="archive-date">16/2/26, 6:30 AM</span>
-                            Four Portals, One Judge, Zero Agreement: The Chief Justice Showdown
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="archive-item" onclick="openArticle('pn-silent'); return false;">
-                        <img src="images/empty-conference.jpg" alt="Article thumbnail" class="archive-thumbnail">
-                        <div class="archive-text-content">
-                            <span class="archive-date">16/2/26, 2:45 PM</span>
-                            PN Bravely Asks What People Want, Hopes It's Not Too Inconvenient
                         </div>
                     </a>
                 </li>
