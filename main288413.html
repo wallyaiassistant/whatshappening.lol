@@ -31,38 +31,56 @@
 
     <main>
         <section class="top-articles">
-            <!-- Article 1: Cultural Leave -->
+            <!-- Article 1: Building Permits + Labour Rent -->
+            <div class="card" onclick="openArticle('building-permits-labour-rent')">
+                <div class="card-date">19/02/26, 9:00 PM &bull; Zykelle Galea</div>
+                <img src="images/building_permits_labour_rent.jpg" alt="Building Permits Surge">
+                <div class="card-title">3,487 New Apartments Approved in One Quarter: Malta Builds Faster Than It Can Spell "Sustainability"</div>
+            </div>
+
+            <!-- Article 2: Eurovision Exodus -->
+            <div class="card" onclick="openArticle('eurovision-exodus')">
+                <div class="card-date">19/02/26, 8:45 PM &bull; Ghaysha Micallef</div>
+                <img src="images/eurovision_exodus.jpg" alt="Eurovision Exodus">
+                <div class="card-title">Eurovision Exodus: 150 Artists Say "Le" to Genocide, ONE News Says "Le" to Journalism</div>
+            </div>
+
+            <!-- Article 3: Cultural Leave -->
             <div class="card" onclick="openArticle('cultural-leave')">
                 <div class="card-date">19/02/26, 5:00 PM &bull; Nyzielle Zammit</div>
                 <img src="images/cultural_leave.jpg" alt="Cultural Leave for Festa Volunteers">
                 <div class="card-title">Malta's Latest Proposal: Extra Days Off for Festa and Carnival Volunteers</div>
             </div>
 
-            <!-- Article 2: Farmers vs Marathon -->
+            <!-- Article 4: Farmers vs Marathon -->
             <div class="card" onclick="openArticle('farmers-vs-marathon')">
                 <div class="card-date">19/02/26, 5:15 PM &bull; Kreshawn Grech</div>
                 <img src="images/farmers_vs_marathon.jpg" alt="Farmers vs Malta Marathon">
                 <div class="card-title">Farmers Furious as Malta Marathon Shuts Down Pitkalija: "We Can't Compete with Joggers"</div>
-            </div>
-
-            <!-- Article 3: Bormla Panther -->
-            <div class="card" onclick="openArticle('bormla-panther')">
-                <div class="card-date">19/02/26, 10:30 AM &bull; Kayzielle Camilleri</div>
-                <img src="images/bormla_panther.jpg" alt="The Bormla Panther">
-                <div class="card-title">The Bormla Panther: Malta Mobilises After Terrifying Stray Cat Sighting</div>
-            </div>
-            
-            <!-- Article 4: Ta' Qali Concession -->
-            <div class="card" onclick="openArticle('taqali-concession')">
-                <div class="card-date">19/02/26, 10:45 AM &bull; Shunique Farrugia</div>
-                <img src="images/taqali_concession.jpg" alt="Ta Qali 50-Year Concession">
-                <div class="card-title">Occupy Land Illegally for Decades? Here's Your 50-Year Deal, Sir</div>
             </div>
         </section>
 
         <section class="older-articles">
             <h2>Older Posts</h2>
             <ul>
+                <li>
+                    <a href="#" class="archive-item" onclick="openArticle('bormla-panther'); return false;">
+                        <img src="images/bormla_panther.jpg" alt="Article thumbnail" class="archive-thumbnail">
+                        <div class="archive-text-content">
+                            <span class="archive-date">19/02/26, 10:30 AM</span>
+                            The Bormla Panther: Malta Mobilises After Terrifying Stray Cat Sighting
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="archive-item" onclick="openArticle('taqali-concession'); return false;">
+                        <img src="images/taqali_concession.jpg" alt="Article thumbnail" class="archive-thumbnail">
+                        <div class="archive-text-content">
+                            <span class="archive-date">19/02/26, 10:45 AM</span>
+                            Occupy Land Illegally for Decades? Here's Your 50-Year Deal, Sir
+                        </div>
+                    </a>
+                </li>
                 <li>
                     <a href="#" class="archive-item" onclick="openArticle('president-wages'); return false;">
                         <img src="images/president_wages.jpg" alt="Article thumbnail" class="archive-thumbnail">
@@ -87,24 +105,6 @@
                         <div class="archive-text-content">
                             <span class="archive-date">17/02/26, 10:35 PM</span>
                             The Standard of Charity: Why Some NGOs Get Civil Servants and Others Get Ta' Qali Gravel
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="archive-item" onclick="openArticle('carnival-wind'); return false;">
-                        <img src="images/carnival_chaos_weather_woes.jpg" alt="Article thumbnail" class="archive-thumbnail">
-                        <div class="archive-text-content">
-                            <span class="archive-date">17/2/26, 8:40 PM</span>
-                            Malta's Carnival Blown Away: The Wind, They Say, Was 'Unexpected'
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="archive-item" onclick="openArticle('board-of-peace'); return false;">
-                        <img src="images/2026-02-17-board-of-peace.jpg" alt="Article thumbnail" class="archive-thumbnail">
-                        <div class="archive-text-content">
-                            <span class="archive-date">17/2/26, 2:45 PM</span>
-                            Robert's Billion-Dollar Seat: Will Malta Join Trump's VIP Club? (Early Reports)
                         </div>
                     </a>
                 </li>
