@@ -530,6 +530,19 @@ main {
     margin-top: 0.5rem;
 }
 
+.archive-link {
+    display: inline-block;
+    color: #888;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    transition: color 0.2s;
+}
+
+.archive-link:hover {
+    color: #5dade2;
+}
+
 /* ---- Article Loading ---- */
 .article-loading {
     text-align: center;
