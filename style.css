@@ -427,8 +427,8 @@ main {
 }
 
 .archive-thumbnail {
-    width: 60px;
-    height: 40px;
+    width: 120px;
+    height: 80px;
     object-fit: cover;
     margin-right: 15px;
     border-radius: 4px;
