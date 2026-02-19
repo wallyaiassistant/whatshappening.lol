@@ -317,6 +317,27 @@
             updateWaveform(0);
         }
 
+        // Cache neutral titles per slug — bias variants always show the neutral title
+        const neutralTitles = {};
+
+        async function cacheNeutralTitle(slug) {
+            if (neutralTitles[slug]) return;
+            try {
+                const resp = await fetch(`articles/${slug}.html`);
+                if (resp.ok) {
+                    const html = await resp.text();
+                    const match = html.match(/<h2>(.*?)<\/h2>/s);
+                    if (match) neutralTitles[slug] = match[1];
+                }
+            } catch(e) {}
+        }
+
+        function enforceNeutralTitle(slug) {
+            if (!neutralTitles[slug]) return;
+            const h2 = document.querySelector('#article-body h2');
+            if (h2) h2.innerHTML = neutralTitles[slug];
+        }
+
         const BIAS_API = 'https://bias-slider.wallyaiassistant.workers.dev/api/bias';
         const BIAS_LABELS = {
             '-3': 'Full PN spin',
@@ -375,6 +396,7 @@
                 const sliderHtml = buildBiasSlider(slug, level);
                 const combined = html.replace('<p class="meta">', sliderHtml + '<p class="meta">');
                 body.innerHTML = combined;
+                enforceNeutralTitle(slug);
                 hydrateShareBars(slug, level);
                 // Swap audio source if it was playing
                 swapAudioForBias(slug, level);
@@ -413,6 +435,8 @@
             body.innerHTML = '<div class="article-loading">Loading...</div>';
 
             try {
+                // Cache the neutral title before loading any variant
+                await cacheNeutralTitle(slug);
                 // Always fetch fresh bias level from Worker
                 const biasLevel = await fetchBiasLevel(slug);
                 const articleFile = biasLevel === 0
@@ -428,6 +452,7 @@
                     sliderHtml + '<p class="meta">'
                 );
                 body.innerHTML = combined;
+                enforceNeutralTitle(slug);
                 hydrateShareBars(slug, biasLevel);
                 // Reset audio state for new article
                 if (audioEl) { audioEl.pause(); cancelAnimationFrame(audioAnimFrame); }
