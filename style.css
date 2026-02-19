@@ -635,3 +635,91 @@ footer {
     border-color: #5dade2;
 }
 
+/* ---- Bias Slider ---- */
+.bias-slider {
+    margin: 0 1rem 1rem;
+    padding: 1rem;
+    background: #222;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.bias-label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.bias-label-blue { color: #4a90d9; }
+.bias-label-red { color: #d94a4a; }
+
+.bias-track-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.bias-arrow {
+    background: none;
+    border: 2px solid #555;
+    color: #999;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.bias-arrow:hover {
+    border-color: #fff;
+    color: #fff;
+}
+
+.bias-arrow.blue:hover { border-color: #4a90d9; color: #4a90d9; }
+.bias-arrow.red:hover { border-color: #d94a4a; color: #d94a4a; }
+
+.bias-track {
+    flex: 1;
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(to right, #1a3a6b, #2a2a4a 35%, #3a2a3a 65%, #6b1a1a);
+    position: relative;
+}
+
+.bias-marker {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #888;
+    box-shadow: 0 0 6px rgba(255,255,255,0.3);
+    transition: left 0.4s ease, background 0.4s ease, border-color 0.4s ease;
+}
+
+.bias-marker[data-level="-3"] { left: 0%; background: #4a90d9; border-color: #4a90d9; }
+.bias-marker[data-level="-2"] { left: 16.67%; background: #6a9ad9; border-color: #6a9ad9; }
+.bias-marker[data-level="-1"] { left: 33.33%; background: #8aaad9; border-color: #8aaad9; }
+.bias-marker[data-level="0"] { left: 50%; background: #fff; border-color: #888; }
+.bias-marker[data-level="1"] { left: 66.67%; background: #d98a8a; border-color: #d98a8a; }
+.bias-marker[data-level="2"] { left: 83.33%; background: #d96a6a; border-color: #d96a6a; }
+.bias-marker[data-level="3"] { left: 100%; background: #d94a4a; border-color: #d94a4a; }
+
+.bias-level-text {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 0.4rem;
+}
+

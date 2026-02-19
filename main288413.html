@@ -173,11 +173,55 @@
             `;
         }
 
+        const BIAS_API = 'https://bias-slider.wallyaiassistant.workers.dev/api/bias';
+        const BIAS_LABELS = {
+            '-3': 'Full PN spin',
+            '-2': 'Heavy PN lean',
+            '-1': 'Slight PN lean',
+            '0': 'Neutral',
+            '1': 'Slight PL lean',
+            '2': 'Heavy PL lean',
+            '3': 'Full PL spin'
+        };
+
+        function buildBiasSlider(slug, level) {
+            return `
+            <div class="bias-slider" data-slug="${slug}" data-level="${level}">
+                <div class="bias-label-row">
+                    <span class="bias-label-blue">Nazzjonalisti sal-mewt</span>
+                    <span class="bias-label-red">Laburisti sal-mewt</span>
+                </div>
+                <div class="bias-track-wrapper">
+                    <button class="bias-arrow blue" onclick="shiftBias('${slug}','blue')" title="Shift toward PN">◀</button>
+                    <div class="bias-track">
+                        <div class="bias-marker" data-level="${level}"></div>
+                    </div>
+                    <button class="bias-arrow red" onclick="shiftBias('${slug}','red')" title="Shift toward PL">▶</button>
+                </div>
+                <div class="bias-level-text">${BIAS_LABELS[String(level)] || 'Neutral'}</div>
+            </div>`;
+        }
+
+        async function fetchBiasLevel(slug) {
+            try {
+                const r = await fetch(`${BIAS_API}/${slug}`);
+                const d = await r.json();
+                return d.bias || 0;
+            } catch { return 0; }
+        }
+
+        async function shiftBias(slug, direction) {
+            // For now, show a "coming soon" toast — payment integration pending
+            const toast = document.getElementById('toast');
+            toast.textContent = '⚡ Lightning payment coming soon — shifting bias costs a few sats!';
+            toast.classList.add('show');
+            setTimeout(() => { toast.classList.remove('show'); toast.textContent = 'Link copied!'; }, 3000);
+        }
+
         async function openArticle(slug) {
             const overlay = document.getElementById('article-overlay');
             const body = document.getElementById('article-body');
 
-            // Show overlay immediately with loading state
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
             history.pushState({articleSlug: slug}, '', '#' + slug);
@@ -189,15 +233,24 @@
                 return;
             }
 
-            // Show loading
             body.innerHTML = '<div class="article-loading">Loading...</div>';
 
             try {
-                const resp = await fetch(`articles/${slug}.html`);
+                // Fetch article content and bias level in parallel
+                const [resp, biasLevel] = await Promise.all([
+                    fetch(`articles/${slug}.html`),
+                    fetchBiasLevel(slug)
+                ]);
                 if (!resp.ok) throw new Error('Not found');
                 const html = await resp.text();
-                articleCache[slug] = html;
-                body.innerHTML = html;
+                // Inject bias slider between image and article content
+                const sliderHtml = buildBiasSlider(slug, biasLevel);
+                const combined = html.replace(
+                    '<div class="article-content">',
+                    sliderHtml + '<div class="article-content">'
+                );
+                articleCache[slug] = combined;
+                body.innerHTML = combined;
                 hydrateShareBars();
             } catch (e) {
                 body.innerHTML = '<div class="article-content"><h2>Article not found</h2><p class="commentary">Sorry, this article could not be loaded.</p></div>';
