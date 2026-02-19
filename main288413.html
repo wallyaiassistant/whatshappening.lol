@@ -236,14 +236,16 @@
             body.innerHTML = '<div class="article-loading">Loading...</div>';
 
             try {
-                // Fetch article content and bias level in parallel
-                const [resp, biasLevel] = await Promise.all([
-                    fetch(`articles/${slug}.html`),
-                    fetchBiasLevel(slug)
-                ]);
+                // Fetch bias level first, then load correct variant
+                const biasLevel = await fetchBiasLevel(slug);
+                const articleFile = biasLevel === 0
+                    ? `articles/${slug}.html`
+                    : `articles/${slug}_bias_${biasLevel}.html`;
+                // Fallback to neutral if variant doesn't exist
+                let resp = await fetch(articleFile);
+                if (!resp.ok) resp = await fetch(`articles/${slug}.html`);
                 if (!resp.ok) throw new Error('Not found');
                 const html = await resp.text();
-                // Inject bias slider between image and article content
                 const sliderHtml = buildBiasSlider(slug, biasLevel);
                 const combined = html.replace(
                     '<p class="meta">',
