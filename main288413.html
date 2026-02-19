@@ -246,8 +246,8 @@
                 // Inject bias slider between image and article content
                 const sliderHtml = buildBiasSlider(slug, biasLevel);
                 const combined = html.replace(
-                    '<div class="article-content">',
-                    sliderHtml + '<div class="article-content">'
+                    '<p class="meta">',
+                    sliderHtml + '<p class="meta">'
                 );
                 articleCache[slug] = combined;
                 body.innerHTML = combined;
