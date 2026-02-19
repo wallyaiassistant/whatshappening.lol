@@ -759,10 +759,9 @@ footer {
     background: #1a1a2e;
     border-radius: 24px;
     padding: 6px 12px;
-    margin-left: 12px;
-    flex: 1;
-    min-width: 0;
-    max-width: 320px;
+    margin-left: auto;
+    flex: 0 1 320px;
+    min-width: 180px;
 }
 
 .audio-play-btn {
