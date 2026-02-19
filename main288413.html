@@ -232,15 +232,28 @@
                 const combined = html.replace('<p class="meta">', sliderHtml + '<p class="meta">');
                 body.innerHTML = combined;
                 hydrateShareBars();
+                // Persist to KV so all visitors see this level
+                setBiasLevel(slug, level);
+            } catch(e) {}
+        }
+
+        async function setBiasLevel(slug, level) {
+            try {
+                await fetch(`${BIAS_API}/${slug}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ level })
+                });
             } catch(e) {}
         }
 
         async function shiftBias(slug, direction) {
-            // For now, show a "coming soon" toast — payment integration pending
-            const toast = document.getElementById('toast');
-            toast.textContent = '⚡ Lightning payment coming soon — shifting bias costs a few sats!';
-            toast.classList.add('show');
-            setTimeout(() => { toast.classList.remove('show'); toast.textContent = 'Link copied!'; }, 3000);
+            const slider = document.querySelector('.bias-slider[data-slug="' + slug + '"]');
+            const current = parseInt(slider?.dataset.level || '0', 10);
+            const newLevel = direction === 'blue'
+                ? Math.max(-3, current - 1)
+                : Math.min(3, current + 1);
+            if (newLevel !== current) previewBias(slug, newLevel);
         }
 
         async function openArticle(slug) {
@@ -251,22 +264,14 @@
             document.body.style.overflow = 'hidden';
             history.pushState({articleSlug: slug}, '', '#' + slug);
 
-            // Check cache
-            if (articleCache[slug]) {
-                body.innerHTML = articleCache[slug];
-                hydrateShareBars();
-                return;
-            }
-
             body.innerHTML = '<div class="article-loading">Loading...</div>';
 
             try {
-                // Fetch bias level first, then load correct variant
+                // Always fetch fresh bias level from Worker
                 const biasLevel = await fetchBiasLevel(slug);
                 const articleFile = biasLevel === 0
                     ? `articles/${slug}.html`
                     : `articles/${slug}_bias_${biasLevel}.html`;
-                // Fallback to neutral if variant doesn't exist
                 let resp = await fetch(articleFile);
                 if (!resp.ok) resp = await fetch(`articles/${slug}.html`);
                 if (!resp.ok) throw new Error('Not found');
@@ -276,7 +281,6 @@
                     '<p class="meta">',
                     sliderHtml + '<p class="meta">'
                 );
-                articleCache[slug] = combined;
                 body.innerHTML = combined;
                 hydrateShareBars();
             } catch (e) {
