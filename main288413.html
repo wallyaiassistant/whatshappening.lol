@@ -173,6 +173,150 @@
             `;
         }
 
+        // ---- Audio Player ----
+        const AUDIO_SLUGS = ['building-permits-labour-rent','eurovision-exodus','cultural-leave','farmers-vs-marathon','bormla-panther','taqali-concession'];
+        const PLAY_SVG = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+        const PAUSE_SVG = '<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zm8 0h4v16h-4z"/></svg>';
+        const SPEEDS = [1, 1.25, 1.5, 2];
+        let audioEl = null;
+        let audioSlug = null;
+        let audioBias = null;
+        let audioSpeedIdx = 0;
+        let audioAnimFrame = null;
+
+        function getAudioUrl(slug, bias) {
+            return bias === 0 ? `audio/${slug}.mp3` : `audio/${slug}_bias_${bias}.mp3`;
+        }
+
+        function buildAudioPlayer(slug, bias) {
+            if (!AUDIO_SLUGS.includes(slug)) return '';
+            // Generate fake waveform bars (40 bars with varied heights)
+            const seed = slug.length + Math.abs(bias);
+            const bars = Array.from({length: 40}, (_, i) => {
+                const h = 20 + Math.round(60 * Math.abs(Math.sin(i * 0.7 + seed)));
+                return `<div class="audio-waveform-bar" style="height:${h}%" data-idx="${i}"></div>`;
+            }).join('');
+            return `
+            <div class="audio-player" data-slug="${slug}" data-bias="${bias}">
+                <button class="audio-play-btn" onclick="toggleAudio('${slug}',${bias})" title="Listen to article">${PLAY_SVG}</button>
+                <div class="audio-progress-wrap">
+                    <div class="audio-waveform" onclick="seekAudio(event)">${bars}</div>
+                    <div class="audio-time-row">
+                        <span class="audio-current">0:00</span>
+                        <span class="audio-duration">-:--</span>
+                    </div>
+                </div>
+                <button class="audio-speed-btn" onclick="cycleSpeed()">1×</button>
+            </div>`;
+        }
+
+        function toggleAudio(slug, bias) {
+            const player = document.querySelector('.audio-player');
+            if (!player) return;
+            const btn = player.querySelector('.audio-play-btn');
+
+            // If switching to different article/bias, reset
+            if (!audioEl || audioSlug !== slug || audioBias !== bias) {
+                if (audioEl) { audioEl.pause(); cancelAnimationFrame(audioAnimFrame); }
+                audioEl = new Audio(getAudioUrl(slug, bias));
+                audioSlug = slug;
+                audioBias = bias;
+                audioSpeedIdx = 0;
+                audioEl.playbackRate = SPEEDS[0];
+                audioEl.addEventListener('loadedmetadata', () => updateDuration());
+                audioEl.addEventListener('ended', () => {
+                    btn.innerHTML = PLAY_SVG;
+                    cancelAnimationFrame(audioAnimFrame);
+                    updateWaveform(1); // fully played
+                });
+            }
+
+            if (audioEl.paused) {
+                audioEl.play();
+                btn.innerHTML = PAUSE_SVG;
+                animateProgress();
+            } else {
+                audioEl.pause();
+                btn.innerHTML = PLAY_SVG;
+                cancelAnimationFrame(audioAnimFrame);
+            }
+        }
+
+        function animateProgress() {
+            if (!audioEl || audioEl.paused) return;
+            const pct = audioEl.duration ? audioEl.currentTime / audioEl.duration : 0;
+            updateWaveform(pct);
+            updateCurrentTime();
+            audioAnimFrame = requestAnimationFrame(animateProgress);
+        }
+
+        function updateWaveform(pct) {
+            const bars = document.querySelectorAll('.audio-waveform-bar');
+            const playedCount = Math.floor(pct * bars.length);
+            bars.forEach((bar, i) => {
+                bar.classList.toggle('played', i < playedCount);
+            });
+        }
+
+        function updateCurrentTime() {
+            const el = document.querySelector('.audio-current');
+            if (el && audioEl) el.textContent = fmtTime(audioEl.currentTime);
+        }
+
+        function updateDuration() {
+            const el = document.querySelector('.audio-duration');
+            if (el && audioEl) el.textContent = fmtTime(audioEl.duration);
+        }
+
+        function fmtTime(s) {
+            if (!s || !isFinite(s)) return '-:--';
+            const m = Math.floor(s / 60);
+            const sec = Math.floor(s % 60);
+            return `${m}:${sec.toString().padStart(2, '0')}`;
+        }
+
+        function seekAudio(e) {
+            if (!audioEl || !audioEl.duration) return;
+            const waveform = e.currentTarget;
+            const rect = waveform.getBoundingClientRect();
+            const pct = (e.clientX - rect.left) / rect.width;
+            audioEl.currentTime = pct * audioEl.duration;
+            updateWaveform(pct);
+            updateCurrentTime();
+        }
+
+        function cycleSpeed() {
+            if (!audioEl) return;
+            audioSpeedIdx = (audioSpeedIdx + 1) % SPEEDS.length;
+            audioEl.playbackRate = SPEEDS[audioSpeedIdx];
+            const btn = document.querySelector('.audio-speed-btn');
+            if (btn) btn.textContent = SPEEDS[audioSpeedIdx] + '×';
+        }
+
+        function swapAudioForBias(slug, bias) {
+            // Called when bias notch changes — swap audio source
+            const player = document.querySelector('.audio-player');
+            if (!player) return;
+            const wasPlaying = audioEl && !audioEl.paused && audioSlug === slug;
+            if (audioEl) { audioEl.pause(); cancelAnimationFrame(audioAnimFrame); }
+            audioEl = new Audio(getAudioUrl(slug, bias));
+            audioSlug = slug;
+            audioBias = bias;
+            audioEl.playbackRate = SPEEDS[audioSpeedIdx];
+            audioEl.addEventListener('loadedmetadata', () => updateDuration());
+            audioEl.addEventListener('ended', () => {
+                player.querySelector('.audio-play-btn').innerHTML = PLAY_SVG;
+                cancelAnimationFrame(audioAnimFrame);
+                updateWaveform(1);
+            });
+            // Reset UI
+            player.dataset.bias = bias;
+            player.querySelector('.audio-play-btn').innerHTML = PLAY_SVG;
+            document.querySelector('.audio-current').textContent = '0:00';
+            document.querySelector('.audio-duration').textContent = '-:--';
+            updateWaveform(0);
+        }
+
         const BIAS_API = 'https://bias-slider.wallyaiassistant.workers.dev/api/bias';
         const BIAS_LABELS = {
             '-3': 'Full PN spin',
@@ -231,7 +375,9 @@
                 const sliderHtml = buildBiasSlider(slug, level);
                 const combined = html.replace('<p class="meta">', sliderHtml + '<p class="meta">');
                 body.innerHTML = combined;
-                hydrateShareBars();
+                hydrateShareBars(slug, level);
+                // Swap audio source if it was playing
+                swapAudioForBias(slug, level);
                 // Persist to KV so all visitors see this level
                 setBiasLevel(slug, level);
             } catch(e) {}
@@ -282,15 +428,20 @@
                     sliderHtml + '<p class="meta">'
                 );
                 body.innerHTML = combined;
-                hydrateShareBars();
+                hydrateShareBars(slug, biasLevel);
+                // Reset audio state for new article
+                if (audioEl) { audioEl.pause(); cancelAnimationFrame(audioAnimFrame); }
+                audioEl = null; audioSlug = null; audioBias = null;
             } catch (e) {
                 body.innerHTML = '<div class="article-content"><h2>Article not found</h2><p class="commentary">Sorry, this article could not be loaded.</p></div>';
             }
         }
 
-        function hydrateShareBars() {
+        function hydrateShareBars(slug, bias) {
             document.querySelectorAll('#article-body .share-bar[data-slug]').forEach(bar => {
-                bar.innerHTML = buildShareBar(bar.dataset.slug);
+                const s = slug || bar.dataset.slug;
+                const b = bias !== undefined ? bias : 0;
+                bar.innerHTML = buildShareBar(bar.dataset.slug) + buildAudioPlayer(s, b);
             });
         }
 
