@@ -31,38 +31,56 @@
 
     <main>
         <section class="top-articles">
-            <!-- Article 1: Building Permits + Labour Rent -->
+            <!-- Article 1: Fawwara Quarry -->
+            <div class="card" onclick="openArticle('fawwara-quarry')">
+                <div class="card-date">20/02/26, 10:00 AM &bull; Dyzanique Spiteri</div>
+                <img src="images/fawwara_quarry.jpg" alt="Fawwara Quarry Expansion">
+                <div class="card-title">PA Approves Quarry Expansion Despite Court Eviction Order — Because Who Needs Courts Anyway?</div>
+            </div>
+
+            <!-- Article 2: Fantasy Funpark -->
+            <div class="card" onclick="openArticle('fantasy-funpark')">
+                <div class="card-date">20/02/26, 10:00 AM &bull; Kyshawn Farrugia</div>
+                <img src="images/fantasy_funpark.jpg" alt="Fantasy Funpark Bugibba Lido">
+                <div class="card-title">Developer Files Plans for "Fantasy Funpark" on Public Land — The Name Alone Is the Satire</div>
+            </div>
+
+            <!-- Article 3: Building Permits + Labour Rent -->
             <div class="card" onclick="openArticle('building-permits-labour-rent')">
                 <div class="card-date">19/02/26, 9:00 PM &bull; Zykelle Galea</div>
                 <img src="images/building_permits_labour_rent.jpg" alt="Building Permits Surge">
                 <div class="card-title">3,487 New Apartments Approved in One Quarter: Malta Builds Faster Than It Can Spell "Sustainability"</div>
             </div>
 
-            <!-- Article 2: Eurovision Exodus -->
+            <!-- Article 4: Eurovision Exodus -->
             <div class="card" onclick="openArticle('eurovision-exodus')">
                 <div class="card-date">19/02/26, 8:45 PM &bull; Ghaysha Micallef</div>
                 <img src="images/eurovision_exodus.jpg" alt="Eurovision Exodus">
                 <div class="card-title">Eurovision Exodus: 150 Artists Say "Le" to Genocide, ONE News Says "Le" to Journalism</div>
-            </div>
-
-            <!-- Article 3: Cultural Leave -->
-            <div class="card" onclick="openArticle('cultural-leave')">
-                <div class="card-date">19/02/26, 5:00 PM &bull; Nyzielle Zammit</div>
-                <img src="images/cultural_leave.jpg" alt="Cultural Leave for Festa Volunteers">
-                <div class="card-title">Malta's Latest Proposal: Extra Days Off for Festa and Carnival Volunteers</div>
-            </div>
-
-            <!-- Article 4: Farmers vs Marathon -->
-            <div class="card" onclick="openArticle('farmers-vs-marathon')">
-                <div class="card-date">19/02/26, 5:15 PM &bull; Kreshawn Grech</div>
-                <img src="images/farmers_vs_marathon.jpg" alt="Farmers vs Malta Marathon">
-                <div class="card-title">Farmers Furious as Malta Marathon Shuts Down Pitkalija: "We Can't Compete with Joggers"</div>
             </div>
         </section>
 
         <section class="older-articles">
             <h2>Older Posts</h2>
             <ul>
+                <li>
+                    <a href="#" class="archive-item" onclick="openArticle('cultural-leave'); return false;">
+                        <img src="images/cultural_leave.jpg" alt="Article thumbnail" class="archive-thumbnail">
+                        <div class="archive-text-content">
+                            <span class="archive-date">19/02/26, 5:00 PM</span>
+                            Malta's Latest Proposal: Extra Days Off for Festa and Carnival Volunteers
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="archive-item" onclick="openArticle('farmers-vs-marathon'); return false;">
+                        <img src="images/farmers_vs_marathon.jpg" alt="Article thumbnail" class="archive-thumbnail">
+                        <div class="archive-text-content">
+                            <span class="archive-date">19/02/26, 5:15 PM</span>
+                            Farmers Furious as Malta Marathon Shuts Down Pitkalija: "We Can't Compete with Joggers"
+                        </div>
+                    </a>
+                </li>
                 <li>
                     <a href="#" class="archive-item" onclick="openArticle('bormla-panther'); return false;">
                         <img src="images/bormla_panther.jpg" alt="Article thumbnail" class="archive-thumbnail">
@@ -87,24 +105,6 @@
                         <div class="archive-text-content">
                             <span class="archive-date">18/02/26, 6:00 PM</span>
                             President Solves Voter Apathy: "Have We Tried Paying Politicians More?"
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="archive-item" onclick="openArticle('board-split'); return false;">
-                        <img src="images/board_of_peace_split.jpg" alt="Article thumbnail" class="archive-thumbnail">
-                        <div class="archive-text-content">
-                            <span class="archive-date">18/02/26, 6:15 PM</span>
-                            Robert's Billion-Dollar Seat: Will Malta Join Trump's VIP Club or Listen to Jason's Common Sense?
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="archive-item" onclick="openArticle('ngo-gravel'); return false;">
-                        <img src="images/ngo_gravel_controversy.jpg" alt="Article thumbnail" class="archive-thumbnail">
-                        <div class="archive-text-content">
-                            <span class="archive-date">17/02/26, 10:35 PM</span>
-                            The Standard of Charity: Why Some NGOs Get Civil Servants and Others Get Ta' Qali Gravel
                         </div>
                     </a>
                 </li>
@@ -174,7 +174,7 @@
         }
 
         // ---- Audio Player ----
-        const AUDIO_SLUGS = ['building-permits-labour-rent','eurovision-exodus','cultural-leave','farmers-vs-marathon','bormla-panther','taqali-concession'];
+        const AUDIO_SLUGS = ['fawwara-quarry','fantasy-funpark','building-permits-labour-rent','eurovision-exodus','cultural-leave','farmers-vs-marathon','bormla-panther','taqali-concession','president-wages'];
         const PLAY_SVG = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
         const PAUSE_SVG = '<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zm8 0h4v16h-4z"/></svg>';
         const SPEEDS = [1, 1.25, 1.5, 2];
