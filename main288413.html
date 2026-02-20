@@ -455,7 +455,16 @@
                 let resp = await fetch(articleFile);
                 if (!resp.ok) resp = await fetch(`articles/${slug}.html`);
                 if (!resp.ok) throw new Error('Not found');
-                const html = await resp.text();
+                let html = await resp.text();
+
+                // FIX: Inject image if missing (for new articles)
+                if (!html.includes('<img')) {
+                    const imgSlug = slug.replace(/-/g, '_');
+                    const imgTag = `<img src="images/${imgSlug}.jpg" alt="Article Image" class="article-hero" style="width:100%; height:auto; display:block; margin-bottom:1rem; border-radius:8px;">`;
+                    // Inject at top
+                    html = imgTag + html;
+                }
+
                 const sliderHtml = buildBiasSlider(slug, biasLevel);
                 const combined = html.replace(
                     '<p class="meta">',
