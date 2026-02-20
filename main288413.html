@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="stylesheet" href="style.css">
     <meta property="og:title" content="whatshappening.lol">
-    <meta property="og:description" content="Satirical Maltese news — because small islands with megalomaniac mindsets ferment the finest satire.">
+    <meta property="og:description" content="Satirical Maltese news - because small islands with tribal mindsets ferment the finest satire.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://whatshappening.lol">
     <meta property="og:image" content="https://whatshappening.lol/logo.png">
@@ -22,7 +22,7 @@
                 <img src="logo.png" alt="whatshappening.lol logo" class="header-logo">
                 <div class="header-text">
                     <h1>whatshappening.l<img src="images/maltese-o.svg" class="title-icon" alt="o">l</h1>
-                    <p class="tagline">...because small islands with megalomaniac mindsets ferment the finest satire.</p>
+                    <p class="tagline">...because small islands with tribal mindsets ferment the finest satire.</p>
                 </div>
             </div>
             <button class="team-btn" onclick="openArticle('the-team')">The Team</button>
@@ -143,7 +143,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 whatshappening.lol — All rights reserved.</p>
+        <p>&copy; 2026 whatshappening.lol - All rights reserved.</p>
         <button class="contact-btn" onclick="openOverlay('contact-modal')">📬 Contact Us</button>
     </footer>
 
@@ -294,7 +294,7 @@
         }
 
         function swapAudioForBias(slug, bias) {
-            // Called when bias notch changes — swap audio source
+            // Called when bias notch changes - swap audio source
             const player = document.querySelector('.audio-player');
             if (!player) return;
             const wasPlaying = audioEl && !audioEl.paused && audioSlug === slug;
@@ -317,7 +317,7 @@
             updateWaveform(0);
         }
 
-        // Cache neutral titles per slug — bias variants always show the neutral title
+        // Cache neutral titles per slug - bias variants always show the neutral title
         const neutralTitles = {};
 
         async function cacheNeutralTitle(slug) {
