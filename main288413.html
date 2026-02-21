@@ -31,38 +31,47 @@
 
     <main>
         <section class="top-articles">
-            <!-- Article 1: Halland Silence -->
+            <!-- Article 1: Marmara Poll -->
+            <div class="card" onclick="openArticle('marmara-poll-gap-narrows')">
+                <div class="card-date">21/02/26, 9:30 PM &bull; Kyshawn Farrugia</div>
+                <img src="images/marmara-poll-gap-narrows.jpg" alt="Two opposing crowds separated by a shrinking gap">
+                <div class="card-title">Marmarà Poll Shows Labour Lead Shrinking But Nobody Panic</div>
+            </div>
+
+            <!-- Article 2: Halland Silence -->
             <div class="card" onclick="openArticle('halland-silence')">
                 <div class="card-date">21/02/26, 1:00 PM &bull; Shunique Farrugia</div>
                 <img src="images/halland-silence.jpg" alt="Halland Hotel Silence">
                 <div class="card-title">Government Masters Ancient Art of Strategic Deafness Over Halland Hotel Fiasco</div>
             </div>
 
-            <!-- Article 2: Marathon Mayhem -->
+            <!-- Article 3: Marathon Mayhem -->
             <div class="card" onclick="openArticle('marathon-mayhem')">
                 <div class="card-date">21/02/26, 1:00 PM &bull; Kreshawn Grech</div>
                 <img src="images/marathon-mayhem.jpg" alt="Marathon Traffic Chaos">
                 <div class="card-title">LifeStar Marathon Meets Storm Damage: When Running Becomes an Extreme Sport</div>
             </div>
 
-            <!-- Article 3: Eurovision Standoff -->
+            <!-- Article 4: Eurovision Standoff -->
             <div class="card" onclick="openArticle('eurovision-standoff')">
                 <div class="card-date">21/02/26, 1:00 PM &bull; Dyzanique Spiteri</div>
                 <img src="images/eurovision-standoff.jpg" alt="Eurovision Artist Protest">
                 <div class="card-title">150 Artists vs Government: Eurovision Row Escalates to Full Diplomatic Crisis</div>
-            </div>
-
-            <!-- Article 4: Police Academy Venue -->
-            <div class="card" onclick="openArticle('police-academy-venue')">
-                <div class="card-date">20/02/26, 8:00 PM &bull; Kyshawn Farrugia</div>
-                <img src="images/police_academy_venue.jpg" alt="Police Academy Illegal Venue">
-                <div class="card-title">Alleged Money Launderer Runs Illegal Venue Opposite Police Academy — Nobody Notices</div>
             </div>
         </section>
 
         <section class="older-articles">
             <h2>Older Posts</h2>
             <ul>
+                <li>
+                    <a href="#" class="archive-item" onclick="openArticle('police-academy-venue'); return false;">
+                        <img src="images/police_academy_venue.jpg" alt="Article thumbnail" class="archive-thumbnail">
+                        <div class="archive-text-content">
+                            <span class="archive-date">20/02/26, 8:00 PM</span>
+                            Alleged Money Launderer Runs Illegal Venue Opposite Police Academy — Nobody Notices
+                        </div>
+                    </a>
+                </li>
                 <li>
                     <a href="#" class="archive-item" onclick="openArticle('labour-hides-deputy'); return false;">
                         <img src="images/labour_hides_deputy.jpg" alt="Article thumbnail" class="archive-thumbnail">
@@ -96,15 +105,6 @@
                         <div class="archive-text-content">
                             <span class="archive-date">20/02/26, 10:00 AM</span>
                             PA Approves Quarry Expansion Despite Court Eviction Order
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="archive-item" onclick="openArticle('fantasy-funpark'); return false;">
-                        <img src="images/fantasy_funpark.jpg" alt="Article thumbnail" class="archive-thumbnail">
-                        <div class="archive-text-content">
-                            <span class="archive-date">20/02/26, 10:00 AM</span>
-                            Developer Files Plans for "Fantasy Funpark" on Public Land
                         </div>
                     </a>
                 </li>
