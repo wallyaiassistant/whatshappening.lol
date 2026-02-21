@@ -64,6 +64,33 @@
             <h2>Older Posts</h2>
             <ul>
                 <li>
+                    <a href="#" class="archive-item" onclick="openArticle('labour-hides-deputy'); return false;">
+                        <img src="images/labour_hides_deputy.jpg" alt="Article thumbnail" class="archive-thumbnail">
+                        <div class="archive-text-content">
+                            <span class="archive-date">20/02/26, 8:15 PM</span>
+                            The Night Labour Put Its Own Deputy Leader in Political Witness Protection
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="archive-item" onclick="openArticle('vacant-grants-panther'); return false;">
+                        <img src="images/vacant_grants_panther.jpg" alt="Article thumbnail" class="archive-thumbnail">
+                        <div class="archive-text-content">
+                            <span class="archive-date">20/02/26, 8:30 PM</span>
+                            Government Doubles Vacant Property Grants to €50K — Meanwhile, a Panther Roams Bormla
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="archive-item" onclick="openArticle('labour-rent-respect'); return false;">
+                        <img src="images/labour_rent_respect.jpg" alt="Article thumbnail" class="archive-thumbnail">
+                        <div class="archive-text-content">
+                            <span class="archive-date">20/02/26, 8:45 PM</span>
+                            Labour "Respects" Court Order After 70 Years of Paying €400 Rent in Valletta
+                        </div>
+                    </a>
+                </li>
+                <li>
                     <a href="#" class="archive-item" onclick="openArticle('fawwara-quarry'); return false;">
                         <img src="images/fawwara_quarry.jpg" alt="Article thumbnail" class="archive-thumbnail">
                         <div class="archive-text-content">
@@ -78,33 +105,6 @@
                         <div class="archive-text-content">
                             <span class="archive-date">20/02/26, 10:00 AM</span>
                             Developer Files Plans for "Fantasy Funpark" on Public Land
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="archive-item" onclick="openArticle('building-permits-labour-rent'); return false;">
-                        <img src="images/building_permits_labour_rent.jpg" alt="Article thumbnail" class="archive-thumbnail">
-                        <div class="archive-text-content">
-                            <span class="archive-date">19/02/26, 9:00 PM</span>
-                            3,487 New Apartments Approved in One Quarter
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="archive-item" onclick="openArticle('eurovision-exodus'); return false;">
-                        <img src="images/eurovision_exodus.jpg" alt="Article thumbnail" class="archive-thumbnail">
-                        <div class="archive-text-content">
-                            <span class="archive-date">19/02/26, 8:45 PM</span>
-                            Eurovision Exodus: 150 Artists Say "Le" to Genocide
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="archive-item" onclick="openArticle('cultural-leave'); return false;">
-                        <img src="images/cultural_leave.jpg" alt="Article thumbnail" class="archive-thumbnail">
-                        <div class="archive-text-content">
-                            <span class="archive-date">19/02/26, 5:00 PM</span>
-                            Malta's Latest Proposal: Extra Days Off for Festa and Carnival Volunteers
                         </div>
                     </a>
                 </li>
@@ -175,15 +175,15 @@
 
         // ---- Audio Player ----
         const AUDIO_SLUGS = [
+            'halland-silence',
+            'marathon-mayhem',
+            'eurovision-standoff',
             'police-academy-venue',
             'labour-hides-deputy',
             'vacant-grants-panther',
             'labour-rent-respect',
             'fawwara-quarry',
-            'fantasy-funpark',
-            'building-permits-labour-rent',
-            'eurovision-exodus',
-            'cultural-leave'
+            'fantasy-funpark'
         ];
         const PLAY_SVG = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
         const PAUSE_SVG = '<svg viewBox="0 0 24 24"><path d="M6 4h4v16H6zm8 0h4v16h-4z"/></svg>';

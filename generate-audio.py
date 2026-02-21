@@ -13,15 +13,15 @@ AUDIO_DIR = "audio"
 
 # The 6 articles that need audio
 SLUGS = [
+    "halland-silence",
+    "marathon-mayhem",
+    "eurovision-standoff",
     "police-academy-venue",
     "labour-hides-deputy",
     "vacant-grants-panther",
     "labour-rent-respect",
     "fawwara-quarry",
     "fantasy-funpark",
-    "building-permits-labour-rent",
-    "eurovision-exodus",
-    "cultural-leave",
 ]
 
 def strip_html(html: str) -> str:
