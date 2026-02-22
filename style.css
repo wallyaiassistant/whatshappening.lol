@@ -184,6 +184,19 @@ main {
     position: relative;
 }
 
+.article-full a {
+    color: #5dade2;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(93, 173, 226, 0.3);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-bottom-color 0.2s;
+}
+
+.article-full a:hover {
+    color: #85c1e9;
+    border-bottom-color: #85c1e9;
+}
+
 .article-full img {
     width: 100%;
     aspect-ratio: 3 / 2;
